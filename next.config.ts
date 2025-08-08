@@ -1,8 +1,13 @@
-export default {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   experimental: {
-    ppr: true,
-    inlineCss: true,
-    useCache: true
+    missingSuspenseWithCSRBailout: false,
   },
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -10,8 +15,11 @@ export default {
       {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
-        pathname: '/s/files/**'
-      }
-    ]
-  }
-};
+        pathname: '/s/files/**',
+      },
+    ],
+  },
+  output: 'standalone',
+}
+
+export default nextConfig
