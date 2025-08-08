@@ -7,7 +7,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   experimental: {
-    missingSuspenseWithCSRBailout: false,
+    useCache: true,  // ← AJOUTER ÇA !
+    ppr: true,       // ← ET ÇA !
   },
   images: {
     formats: ['image/avif', 'image/webp'],
